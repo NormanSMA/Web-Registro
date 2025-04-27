@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es-NI">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eventos Tecnológicos - UAM</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="imagen/logouam.png" alt="Logo UAM" class="logo-uam-navbar">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menuNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link active" href="eventos.html">Eventos</a></li>
+        <li class="nav-item"><a class="nav-link" href="registro.html">Registrar</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<!-- Contenido de eventos -->
+<section class="container py-5 mt-5">
+  <div class="text-center mb-5">
+    <h1 class="titulo-eventos">Eventos Tecnológicos</h1>
+    <p class="descripcion-uam">Explora nuestros próximos eventos para potenciar tus habilidades en tecnología e innovación.</p>
+  </div>
+
+  <div class="row g-4">
+
+    <!-- Evento 1 -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="imagen/eventos/imagengit.png" class="card-img-top" alt="GitHub para proyectos colaborativos">
+        <div class="card-body">
+          <h5 class="card-title">Uso de GitHub en proyectos colaborativos</h5>
+          <p class="card-text">Aprende a trabajar en equipo usando GitHub en proyectos reales.</p>
+          <ul class="list-unstyled">
+            <li><strong>Fecha:</strong> 10 de mayo 2025</li>
+            <li><strong>Hora:</strong> 9:00 AM</li>
+            <li><strong>Modalidad:</strong> Presencial (Auditorio Central UAM)</li>
+          </ul>
+          <button class="boton-vermas" onclick="toggleDescripcion(this)">Mostrar más</button>
+          <div class="descripcion-extra">
+            <p>Profundizaremos en ramas, merges, pull requests y buenas prácticas de colaboración en equipos grandes. Impartido por la Ing. María González, especialista en DevOps.</p>
+          </div>
+          <a href="registro.html" class="boton mt-3">Registrar</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Evento 2 -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="imagen/eventos/imagendocker.png" class="card-img-top" alt="Docker en desarrollo">
+        <div class="card-body">
+          <h5 class="card-title">Introducción a Docker para entornos de desarrollo</h5>
+          <p class="card-text">Descubre cómo usar contenedores para tus proyectos de software de forma eficiente.</p>
+          <ul class="list-unstyled">
+            <li><strong>Fecha:</strong> 11 de mayo 2025</li>
+            <li><strong>Hora:</strong> 10:00 AM</li>
+            <li><strong>Modalidad:</strong> Online (Zoom UAM)</li>
+          </ul>
+          <button class="boton-vermas" onclick="toggleDescripcion(this)">Mostrar más</button>
+          <div class="descripcion-extra">
+            <p>Aprenderás a crear imágenes, redes y contenedores para ambientes de desarrollo y producción. Conducido por el Ing. Carlos Mena, experto en infraestructura cloud.</p>
+          </div>
+          <a href="registro.html" class="boton mt-3">Registrar</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Evento 3 -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="imagen/eventos/imagenlinuxs.png" class="card-img-top" alt="Configuración de servidores Linux">
+        <div class="card-body">
+          <h5 class="card-title">Configuración básica de servidores Linux</h5>
+          <p class="card-text">Conoce los fundamentos para administrar servidores basados en Linux.</p>
+          <ul class="list-unstyled">
+            <li><strong>Fecha:</strong> 12 de mayo 2025</li>
+            <li><strong>Hora:</strong> 11:00 AM</li>
+            <li><strong>Modalidad:</strong> Presencial (Auditorio Central UAM)</li>
+          </ul>
+          <button class="boton-vermas" onclick="toggleDescripcion(this)">Mostrar más</button>
+          <div class="descripcion-extra">
+            <p>Veremos configuración de servicios básicos, administración de usuarios y conceptos de seguridad inicial. Dirigido por la Lic. Andrea Pérez, especialista en sistemas GNU/Linux.</p>
+          </div>
+          <a href="registro.html" class="boton mt-3">Registrar</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-4" style="background-color: #212227; color: #fff;">
+  <p>© 2025 Universidad Americana (UAM). Todos los derechos reservados.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Script para "Mostrar más" -->
+<script>
+function toggleDescripcion(boton) {
+  const descripcion = boton.nextElementSibling;
+  descripcion.classList.toggle('mostrar');
+  boton.textContent = descripcion.classList.contains('mostrar') ? 'Mostrar menos' : 'Mostrar más';
+}
+</script>
+
+</body>
+</html>
