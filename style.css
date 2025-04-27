@@ -1,3 +1,10 @@
+:root {
+  --color-primario: #007a88;
+  --color-secundario: #0099A8;
+  --color-texto-principal: #212227;
+  --color-texto-secundario: #555;
+}
+
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
@@ -27,22 +34,63 @@ body {
   color: #007a88;
 }
 
-/* Carrusel */
-#carruselInicio .carousel-item img.carrusel-img {
-  height: 700;
-  max-height: 1000px;
-  object-fit: cover;
+#carruselInicio {
+  max-width: 1000px; /* Ajusta el ancho del carrusel */
+  margin: 0 auto; /* Centra el carrusel horizontalmente */
 }
 
-/* Contenedor Principal */
+#carruselInicio .carousel-item img {
+  height: 400px; /* Ajusta la altura del carrusel */
+  width: 100%; /* Asegura que las imágenes ocupen todo el ancho del carrusel */
+  object-fit: cover; /* Asegura que las imágenes se ajusten correctamente */
+}
+
+.carrusel-texto {
+  position: absolute;
+  top: 20px; /* Ajusta la posición vertical */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  text-align: center;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.carrusel-texto h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.carrusel-titulo {
+  @extend .texto-centrado;
+}
+
+.carrusel-titulo-separado {
+  @extend .texto-centrado;
+}
+
+.texto-centrado {
+  text-align: center;
+  margin: 20px 0;
+}
+
 .contenedor {
   padding: 60px 20px;
 }
 
-/* Títulos */
 h1, .titulo-uam, .titulo-eventos {
   color: #007a88;
-  font-weight: 600; /* Ajuste más fino */
+  font-weight: bold; /* Cambiado a bold para unificar */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.titulo-uam {
+  color: #007a88;
+  font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -56,19 +104,12 @@ h2 {
 
 /* Descripción */
 .descripcion-uam {
-  color: #444;
-  font-size: 1.3rem;
-  margin-top: 15px;
-  margin-bottom: 50px;
-  text-align: center;
-}
-
-.descripcion-uam {
-  font-size: 1.2rem;
   color: #555;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-/* Descripción oculta */
 .descripcion-extra {
   display: none;
   margin-top: 10px;
@@ -80,7 +121,6 @@ h2 {
   display: block;
 }
 
-/* Cards */
 .card {
   background-color: white;
   border: none;
@@ -98,15 +138,14 @@ h2 {
 .card-title {
   font-weight: 700;
   font-size: 1.3rem;
-  color: #212227;
+  color: var(--color-texto-principal);
   margin-bottom: 15px;
 }
 
 .card-text {
-  color: #555;
+  color: var(--color-texto-secundario);
 }
 
-/* Beneficios */
 .section-beneficios {
   display: flex;
   align-items: center;
@@ -134,7 +173,6 @@ h2 {
   color: #555;
 }
 
-/* Logo al costado */
 .imagen-beneficios .logo-beneficios {
   width: 250px;
   height: auto;
@@ -147,7 +185,6 @@ h2 {
   transform: scale(1.05);
 }
 
-/* Footer */
 footer {
   background-color: #212227;
   color: #ffffff;
@@ -156,7 +193,6 @@ footer {
   text-align: center;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .section-beneficios {
     flex-direction: column;
@@ -170,24 +206,21 @@ footer {
   }
 }
 
-/* Botones */
-.boton {
-  display: inline-block;
-  background-color: #0099A8;
+.boton, button[type="submit"] {
+  background-color: var(--color-primario);
   color: white;
+  font-weight: bold;
+  border: none;
   padding: 10px 25px;
   border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.boton:hover {
-  background-color: #007a88;
+.boton:hover, button[type="submit"]:hover {
+  background-color: #005f66;
   transform: scale(1.05);
 }
 
-/* Botón Mostrar Más */
 .boton-vermas {
   background: none;
   border: none;
@@ -200,4 +233,31 @@ footer {
 
 .boton-vermas:hover {
   color: #005f66;
+}
+
+/* Estilo para el mensaje de éxito */
+#mensajeExito {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.linea-divisoria {
+  border: none;
+  border-top: 2px solid #007a88; /* Color de la línea */
+  width: 50%; /* Ancho de la línea */
+  margin: 10px auto; /* Centra la línea y agrega espacio */
+}
+
+.lista-estilizada {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 20px;
+}
+
+.lista-estilizada li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: var(--color-texto-secundario);
 }

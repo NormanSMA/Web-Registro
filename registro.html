@@ -1,52 +1,98 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-NI">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro - Universidad Americana (UAM)</title>
-    <link rel="stylesheet" href="css/estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registro - Universidad Americana (UAM)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="navbar">
-    <img src="assets/img/logo-uam.png" alt="Logo UAM" class="logo">
-    <nav>
-        <ul class="menu">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="eventos.html">Eventos</a></li>
-            <li><a href="registro.html">Registrar</a></li>
-        </ul>
-    </nav>
+<!-- Navbar -->
+<header class="navbar navbar-expand-lg fixed-top" style="background-color: #007a88;">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="imagen/logouam2.png" alt="Logo UAM" class="logo-uam-navbar" height="55">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menuNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="eventos.html">Eventos</a></li>
+        <li class="nav-item"><a class="nav-link active" href="registro.html">Registrar</a></li>
+      </ul>
+    </div>
+  </div>
 </header>
 
-<main class="contenedor">
-    <h1>Registro de Participación</h1>
-    <form id="formularioRegistro" onsubmit="return validarFormulario()">
-        <label for="nombre">Nombre completo:</label>
-        <input type="text" id="nombre" required>
+<!-- Formulario de Registro -->
+<section class="container py-5 mt-5">
+  <div class="text-center mb-5">
+    <h1 class="titulo-uam">Formulario de Registro</h1>
+    <hr class="linea-divisoria">
+    <p class="descripcion-uam">Regístrate para asistir a nuestros eventos tecnológicos y ser parte del futuro de la innovación.</p>
+  </div>
 
-        <label for="correo">Correo institucional:</label>
-        <input type="email" id="correo" required>
+  <!-- Mensaje de éxito -->
+  <div id="mensajeExito" class="alert alert-success d-none" role="alert">
+    ¡Registro exitoso! Te contactaremos pronto.
+  </div>
 
-        <label for="carrera">Carrera:</label>
-        <input type="text" id="carrera" required>
+  <form id="formRegistro" class="needs-validation" novalidate>
 
-        <label>Conferencias:</label>
-        <div class="checkbox-group">
-            <input type="checkbox" id="evento1" name="conferencia" value="GitHub">
-            <label for="evento1">Uso de GitHub</label><br>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="nombre" class="form-label">Nombre completo <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre completo" required>
+        <div class="invalid-feedback">Por favor, ingresa tu nombre completo.</div>
+      </div>
 
-            <input type="checkbox" id="evento2" name="conferencia" value="Docker">
-            <label for="evento2">Introducción a Docker</label><br>
+      <div class="col-md-6">
+        <label for="correo" class="form-label">Correo institucional <span class="text-danger">*</span></label>
+        <input type="email" class="form-control" id="correo" placeholder="ejemplo@uam.edu.ni" required>
+        <div class="invalid-feedback">Por favor, ingresa un correo válido.</div>
+      </div>
+    </div>
 
-            <input type="checkbox" id="evento3" name="conferencia" value="Linux">
-            <label for="evento3">Configuración básica de servidores Linux</label>
-        </div>
+    <div class="mb-3">
+      <label for="carrera" class="form-label">Carrera <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="carrera" placeholder="Ingresa tu carrera" required>
+      <div class="invalid-feedback">Por favor, ingresa tu carrera.</div>
+    </div>
 
-        <button type="submit" class="boton">Enviar Registro</button>
-    </form>
-</main>
+    <div class="mb-4">
+      <label class="form-label">¿A qué conferencias asistirás? <span class="text-danger">*</span></label>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="conferencia1" value="GitHub">
+        <label class="form-check-label" for="conferencia1">Uso de GitHub en proyectos colaborativos</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="conferencia2" value="Docker">
+        <label class="form-check-label" for="conferencia2">Introducción a Docker para desarrollo</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="conferencia3" value="Linux">
+        <label class="form-check-label" for="conferencia3">Configuración básica de servidores Linux</label>
+      </div>
+      <div class="invalid-feedback">Debes seleccionar al menos una conferencia.</div>
+    </div>
 
-<script src="js/validaciones.js"></script>
+    <div class="text-center">
+      <button type="submit" class="boton w-50">Registrar</button>
+    </div>
+
+  </form>
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-4" style="background-color: #212227; color: #fff;">
+  <p>© 2025 Universidad Americana (UAM). Todos los derechos reservados.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
