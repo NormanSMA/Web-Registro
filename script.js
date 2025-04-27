@@ -8,17 +8,15 @@ document.addEventListener('DOMContentLoaded', function () {
       event.stopPropagation();
   
       if (validarFormulario()) {
-        // Mostrar mensaje de éxito
         mensajeExito.classList.remove('d-none');
         mensajeExito.classList.add('animate__animated', 'animate__fadeInDown');
   
-        // Resetear formulario después de 2 segundos
         setTimeout(() => {
           form.reset();
           form.classList.remove('was-validated');
           mensajeExito.classList.add('d-none');
           mensajeExito.classList.remove('animate__animated', 'animate__fadeInDown');
-        }, 3000);
+        }, 6000);
       } else {
         form.classList.add('was-validated');
       }

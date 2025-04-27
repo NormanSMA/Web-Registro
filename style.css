@@ -1,59 +1,85 @@
 :root {
   --color-primario: #007a88;
-  --color-secundario: #0099A8;
+  --color-secundario: #0099a8;
   --color-texto-principal: #212227;
   --color-texto-secundario: #555;
 }
 
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   background-color: #f5f5f5;
   scroll-behavior: smooth;
 }
 
 .navbar {
   background-color: #ffffff;
-  padding: 12px 40px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  padding: 15px 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+}
+
+.navbar-light.bg-white {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand img.logo-uam-navbar {
-  width: 100px; 
+  width: 120px;
+  height: auto;
+}
+
+.logo-uam-navbar {
+  width: auto;
+  height: auto;
 }
 
 .navbar-nav .nav-link {
   color: #292929;
-  font-weight: 700;
-  font-size: 1.1rem;
+  font-weight: 600;
+  font-size: 1rem;
   margin: 0 15px;
   transition: color 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #007a88;
+  color: var(--color-primario);
 }
 
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+/* Carrusel */
 #carruselInicio {
-  max-width: 1000px; /* Ajusta el ancho del carrusel */
-  margin: 0 auto; /* Centra el carrusel horizontalmente */
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 #carruselInicio .carousel-item img {
-  height: 400px; /* Ajusta la altura del carrusel */
-  width: 100%; /* Asegura que las imágenes ocupen todo el ancho del carrusel */
-  object-fit: cover; /* Asegura que las imágenes se ajusten correctamente */
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.carrusel-img {
+  height: 400px;
+  object-fit: cover;
 }
 
 .carrusel-texto {
   position: absolute;
-  top: 20px; /* Ajusta la posición vertical */
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
   text-align: center;
   color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 10px 20px;
   border-radius: 10px;
 }
@@ -65,11 +91,13 @@ body {
 }
 
 .carrusel-titulo {
-  @extend .texto-centrado;
+  text-align: center;
+  margin: 20px 0;
 }
 
 .carrusel-titulo-separado {
-  @extend .texto-centrado;
+  text-align: center;
+  margin: 20px 0;
 }
 
 .texto-centrado {
@@ -81,22 +109,24 @@ body {
   padding: 60px 20px;
 }
 
-h1, .titulo-uam, .titulo-eventos {
-  color: #007a88;
-  font-weight: bold; /* Cambiado a bold para unificar */
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.titulo-uam {
+h1,
+.titulo-uam,
+.titulo-eventos {
   color: #007a88;
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
 }
 
+.titulo-uam {
+  color: var(--color-primario);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 h2 {
-  color: #0099A8;
+  color: #0099a8;
   font-weight: 700;
   margin-bottom: 20px;
   text-align: center;
@@ -104,7 +134,7 @@ h2 {
 
 /* Descripción */
 .descripcion-uam {
-  color: #555;
+  color: var(--color-texto-secundario);
   font-size: 1.2rem;
   text-align: center;
   margin-bottom: 40px;
@@ -125,14 +155,18 @@ h2 {
   background-color: white;
   border: none;
   border-radius: 15px;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
 }
 
 .card-title {
@@ -193,6 +227,14 @@ footer {
   text-align: center;
 }
 
+.footer {
+  background-color: #212227;
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 20px;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .section-beneficios {
     flex-direction: column;
@@ -206,7 +248,8 @@ footer {
   }
 }
 
-.boton, button[type="submit"] {
+.boton,
+button[type="submit"] {
   background-color: var(--color-primario);
   color: white;
   font-weight: bold;
@@ -216,7 +259,8 @@ footer {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.boton:hover, button[type="submit"]:hover {
+.boton:hover,
+button[type="submit"]:hover {
   background-color: #005f66;
   transform: scale(1.05);
 }
@@ -224,7 +268,7 @@ footer {
 .boton-vermas {
   background: none;
   border: none;
-  color: #007a88;
+  color: var(--color-primario);
   font-weight: bold;
   margin-top: 10px;
   cursor: pointer;
@@ -235,7 +279,6 @@ footer {
   color: #005f66;
 }
 
-/* Estilo para el mensaje de éxito */
 #mensajeExito {
   font-size: 1rem;
   font-weight: bold;
@@ -245,9 +288,9 @@ footer {
 
 .linea-divisoria {
   border: none;
-  border-top: 2px solid #007a88; /* Color de la línea */
-  width: 50%; /* Ancho de la línea */
-  margin: 10px auto; /* Centra la línea y agrega espacio */
+  border-top: 2px solid var(--color-primario);
+  width: 50%;
+  margin: 10px auto;
 }
 
 .lista-estilizada {
@@ -260,4 +303,32 @@ footer {
   margin-bottom: 10px;
   font-size: 1rem;
   color: var(--color-texto-secundario);
+}
+
+.form-select {
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  color: #444;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.form-select:focus {
+  border-color: #007a88;
+  box-shadow: 0px 0px 8px rgba(0, 122, 136, 0.5);
+}
+
+.form-check-input:checked {
+  background-color: #007a88;
+  border-color: #007a88;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
 }

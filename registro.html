@@ -6,29 +6,29 @@
   <title>Registro - Universidad Americana (UAM)</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 <body>
 
-<!-- Navbar -->
-<header class="navbar navbar-expand-lg fixed-top" style="background-color: #007a88;">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">
-      <img src="imagen/logouam2.png" alt="Logo UAM" class="logo-uam-navbar" height="55">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="menuNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="eventos.html">Eventos</a></li>
-        <li class="nav-item"><a class="nav-link active" href="registro.html">Registrar</a></li>
-      </ul>
+<header class="navbar navbar-expand-lg fixed-top navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="imagen/logouam.png" alt="Logo UAM" class="logo-uam-navbar">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="eventos.html">Eventos</a></li>
+          <li class="nav-item"><a class="nav-link" href="registro.html">Registrar</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
+  
 
-<!-- Formulario de Registro -->
 <section class="container py-5 mt-5">
   <div class="text-center mb-5">
     <h1 class="titulo-uam">Formulario de Registro</h1>
@@ -36,7 +36,10 @@
     <p class="descripcion-uam">Regístrate para asistir a nuestros eventos tecnológicos y ser parte del futuro de la innovación.</p>
   </div>
 
-  <!-- Mensaje de éxito -->
+  <div class="text-center mb-4">
+    <img src="imagen/imagenuam1.png" alt="Imagen representativa de registro" class="img-fluid rounded">
+  </div>
+
   <div id="mensajeExito" class="alert alert-success d-none" role="alert">
     ¡Registro exitoso! Te contactaremos pronto.
   </div>
@@ -57,10 +60,40 @@
       </div>
     </div>
 
-    <div class="mb-3">
+    <div class="mb-4">
       <label for="carrera" class="form-label">Carrera <span class="text-danger">*</span></label>
-      <input type="text" class="form-control" id="carrera" placeholder="Ingresa tu carrera" required>
-      <div class="invalid-feedback">Por favor, ingresa tu carrera.</div>
+      <select id="carrera" class="form-select" required>
+        <option value="">Selecciona tu carrera</option>
+        <optgroup label="Ciencias de la Salud">
+          <option>Medicina</option>
+          <option>Odontología</option>
+          <option>Psicología</option>
+          <option>Nutrición</option>
+        </optgroup>
+        <optgroup label="Ciencias Jurídicas y Relaciones Internacionales">
+          <option>Derecho</option>
+          <option>Diplomacia y Relaciones Internacionales</option>
+        </optgroup>
+        <optgroup label="Ciencias Administrativas y Económicas">
+          <option>Administración de Empresas</option>
+          <option>Contabilidad y Finanzas</option>
+          <option>Economía Empresarial</option>
+          <option>Negocios Internacionales</option>
+        </optgroup>
+        <optgroup label="Marketing, Diseño y Comunicación">
+          <option>Marketing y Publicidad</option>
+          <option>Diseño y Comunicación Visual</option>
+          <option>Comunicación y Relaciones Públicas</option>
+        </optgroup>
+        <optgroup label="Ingeniería y Arquitectura">
+          <option>Ingeniería Industrial</option>
+          <option>Ingeniería en Sistemas</option>
+          <option>Arquitectura</option>
+        </optgroup>
+      </select>
+      <div class="invalid-feedback">
+        Por favor, selecciona tu carrera.
+      </div>
     </div>
 
     <div class="mb-4">
@@ -71,13 +104,15 @@
       </div>
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="conferencia2" value="Docker">
-        <label class="form-check-label" for="conferencia2">Introducción a Docker para desarrollo</label>
+        <label class="form-check-label" for="conferencia2">Introducción a Docker para entornos de desarrollo</label>
       </div>
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="conferencia3" value="Linux">
         <label class="form-check-label" for="conferencia3">Configuración básica de servidores Linux</label>
       </div>
-      <div class="invalid-feedback">Debes seleccionar al menos una conferencia.</div>
+      <div class="invalid-feedback">
+        Selecciona al menos una conferencia.
+      </div>
     </div>
 
     <div class="text-center">
@@ -87,9 +122,8 @@
   </form>
 </section>
 
-<!-- Footer -->
-<footer class="text-center py-4" style="background-color: #212227; color: #fff;">
-  <p>© 2025 Universidad Americana (UAM). Todos los derechos reservados.</p>
+<footer class="footer">
+  <p>© 2025 Universidad Americana (UAM). Todos los derechos reservados./ Por NormanMZ</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
